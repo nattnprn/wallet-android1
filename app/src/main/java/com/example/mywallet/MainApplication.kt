@@ -1,7 +1,8 @@
 package com.example.mywallet
 
 import android.app.Application
-import com.example.mywallet.di.getMainModule
+import com.example.mywallet.di.getPreferenceModule
+import com.example.mywallet.di.getModules
 import com.example.mywallet.di.getViewModelModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
@@ -12,10 +13,7 @@ class MainApplication : Application(){
 
         startKoin {
             androidContext(this@MainApplication)
-            modules(listOf(
-                getMainModule(),
-                getViewModelModule()
-            ))
+            modules(getModules(this@MainApplication))
         }
     }
 

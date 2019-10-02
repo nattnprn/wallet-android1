@@ -9,7 +9,7 @@ import org.koin.core.module.Module
 import org.koin.dsl.module
 
 fun getModules(context: Context) = listOf(
-    getPreferenceModule(),
+    getPreferenceModule(context),
     getViewModelModule(),
     getDatabaseModule(context)
 )
